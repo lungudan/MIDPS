@@ -24,6 +24,14 @@ class calculator
             case '/':
             return $this->a / $this->b;
             break;
+                
+            case '√':
+            return sqrt($this->a);
+            break;
+            
+            case '^':
+            return pow($this->a, $this->b);
+            break;
 
             default:
             return "Error";
@@ -43,6 +51,7 @@ if(isset($_POST['submit']))
     $rezult = $ca->rezultat($_POST['nr1'],$_POST['nr2'],$_POST['operatie']);
 }
 ?>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <style type="text/css">
 input[type=button], input[type=reset], input[type=submit] { background-color: #065896; border: none; color: white; padding: 16px 32px; text-decoration: none; margin: 4px 2px; cursor: pointer; positon: relative;}
 input[type=number], input[type=text]{
@@ -83,6 +92,8 @@ left: 50px;
             <option value="-">   -   </option>
             <option value="*">   *   </option>
             <option value="/">   /   </option>
+            <option value="√">   √   </option>
+            <option value="^">   ^   </option>
         </select></td>
       
     </tr>
