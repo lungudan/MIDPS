@@ -1,10 +1,10 @@
 <?php
 class Database
 {   
-    private $host = "localhost";
-    private $db_name = "se";
-    private $username = "root";
-    private $password = "vertrigo";
+    private $host = "";
+    private $db_name = "";
+    private $username = "";
+    private $password = "";
     public $conn;
      
     public function dbConnection()
