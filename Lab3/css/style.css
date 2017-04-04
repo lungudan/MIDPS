@@ -2,7 +2,21 @@
 /* CSS Document */
 
 body{
-	background:#f1f9f9;
+	background-image: url("/img/back.jpg");
+	background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+	
+}
+#alert_add {
+   width:40%; 
+   height:50px;   
+}
+#alert_add h5 {
+position: relative;
+bottom: 6px;	
+	
 }
 
 .form-signin {

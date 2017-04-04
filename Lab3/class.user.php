@@ -46,6 +46,30 @@ class USER
 		}				
 	}
 	
+	public function add($first,$last,$email,$position,$grupa)
+	{
+		global $conn;
+		try
+		{
+			
+			$stmt = $conn->prepare("INSERT INTO members(first_name,last_name,email,position,grupa) 
+		                                               VALUES(:first, :last, :uemail, :uposition, :ugrupa)");
+												  
+			$stmt->bindparam(":first", $first);
+			$stmt->bindparam(":last", $last);
+			$stmt->bindparam(":uemail", $email);	
+            $stmt->bindparam(":uposition", $position);	
+            $stmt->bindparam(":ugrupa", $grupa);			
+				
+			$stmt->execute();	
+			
+			return $stmt;	
+		}
+		catch(PDOException $e)
+		{
+			echo $e->getMessage();
+		}				
+	}
 	
 	public function doLogin($uname,$umail,$upass)
 	{

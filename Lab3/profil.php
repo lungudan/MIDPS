@@ -11,7 +11,7 @@
 	$stmt = $auth_user->runQuery("SELECT * FROM users WHERE user_id=:user_id");
 	$stmt->execute(array(":user_id"=>$user_id));
 	
-	$userRow=$stmt->fetch(PDO::FETCH_ASSOC);
+	$strow=$stmt->fetch(PDO::FETCH_ASSOC);
 	
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -20,9 +20,9 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen"> 
 <link href="bootstrap/css/bootstrap-theme.min.css" rel="stylesheet" media="screen"> 
-<script type="text/javascript" src="jquery-1.11.3-jquery.min.js"></script>
-<link rel="stylesheet" href="style.css" type="text/css"  />
-<title>Buna - <?php print($userRow['user_email']); ?></title>
+<script type="text/javascript" src="/js/jquery-1.11.3-jquery.min.js"></script>
+<link rel="stylesheet" href="/css/style.css" type="text/css"  />
+<title>Buna - <?php print($strow['user_email']); ?></title>
 </head>
 
 <body>
@@ -47,9 +47,10 @@
             
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-			  <span class="glyphicon glyphicon-user"></span>&nbsp;Salut <?php echo $userRow['user_email']; ?>&nbsp;<span class="caret"></span></a>
+			  <span class="glyphicon glyphicon-user"></span>&nbsp;Salut <?php echo $strow['user_email']; ?>&nbsp;<span class="caret"></span></a>
               <ul class="dropdown-menu">
                 <li><a href="#"><span class="glyphicon glyphicon-user"></span>&nbsp;Profil</a></li>
+				<li><a href="/add.php"><span class="glyphicon glyphicon-check"></span>&nbsp;Adaugare Membri</a></li>
                 <li><a href="logout.php?logout=true"><span class="glyphicon glyphicon-log-out"></span>&nbsp;Iesire</a></li>
               </ul>
             </li>
@@ -99,7 +100,7 @@
 						<tr>
 						<td><?php echo $row['first_name']."&nbsp;".$row['last_name']; ?></td>
 						<td>
-						<button data-toggle="modal" data-target="#view-modal" data-id="<?php echo $row['user_id']; ?>" id="getUser" class="btn btn-sm btn-info"><i class="glyphicon glyphicon-eye-open"></i> View</button>
+						<button data-toggle="modal" data-target="#view-modal" data-id="<?php echo $row['user_id']; ?>" id="get_st" class="btn btn-sm btn-info"><i class="glyphicon glyphicon-eye-open"></i> Vezi</button>
 						</td>
 						</tr>
 						<?php
@@ -130,7 +131,7 @@
                        <div class="modal-body"> 
                        
                        	   <div id="modal-loader" style="display: none; text-align: center;">
-                       	   	<img src="ajax-loader.gif">
+                       	   	<img src="/img/loading.gif">
                        	   </div>
                             
                            <!-- datele din tabel aici -->                          
@@ -155,7 +156,7 @@
 <script>
 $(document).ready(function(){
 	
-	$(document).on('click', '#getUser', function(e){
+	$(document).on('click', '#get_st', function(e){
 		
 		e.preventDefault();
 		
@@ -165,7 +166,7 @@ $(document).ready(function(){
 		$('#modal-loader').show();      
 		
 		$.ajax({
-			url: 'getuser.php',
+			url: 'get_st.php',
 			type: 'POST',
 			data: 'id='+uid,
 			dataType: 'html'

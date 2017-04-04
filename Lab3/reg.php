@@ -15,16 +15,16 @@ if(isset($_POST['btn-signup']))
 	$upass = strip_tags($_POST['txt_upass']);	
 	
 	if($uname=="")	{
-		$error[] = "scrieti un username !";	
+		$error[] = "Scrieti un username!";	
 	}
 	else if($umail=="")	{
-		$error[] = "scrieti un email  !";	
+		$error[] = "Scrieti un email!";	
 	}
 	else if(!filter_var($umail, FILTER_VALIDATE_EMAIL))	{
-	    $error[] = 'Scrieti un email valid !';
+	    $error[] = 'Scrieti un email valid!';
 	}
 	else if($upass=="")	{
-		$error[] = "scrieti un password !";
+		$error[] = "Scrieti o parola!";
 	}
 	else if(strlen($upass) < 6){
 		$error[] = "Parola trebuie sa contina nu mai putin de 6 caractere";	
@@ -38,15 +38,15 @@ if(isset($_POST['btn-signup']))
 			$row=$stmt->fetch(PDO::FETCH_ASSOC);
 				
 			if($row['user_name']==$uname) {
-				$error[] = "acest username este deja ocupat !";
+				$error[] = "Acest username este deja ocupat!";
 			}
 			else if($row['user_email']==$umail) {
-				$error[] = "acest email este deja ocupat !";
+				$error[] = "Acest email este deja ocupat!";
 			}
 			else
 			{
 				if($user->register($uname,$umail,$upass)){	
-					$user->redirect('reg.php?joined');
+					$user->redirect('reg.php?success');
 				}
 			}
 		}
@@ -65,7 +65,7 @@ if(isset($_POST['btn-signup']))
 <title>Inregistrare</title>
 <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
 <link href="bootstrap/css/bootstrap-theme.min.css" rel="stylesheet" media="screen">
-<link rel="stylesheet" href="style.css" type="text/css"  />
+<link rel="stylesheet" href="/css/style.css" type="text/css"  />
 </head>
 <body>
 
@@ -87,7 +87,7 @@ if(isset($_POST['btn-signup']))
                      <?php
 				}
 			}
-			else if(isset($_GET['joined']))
+			else if(isset($_GET['success']))
 			{
 				 ?>
                  <div class="alert alert-info">

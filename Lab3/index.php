@@ -20,7 +20,7 @@ if(isset($_POST['btn-login']))
 	}
 	else
 	{
-		$error = "Date gresite !";
+		$error = "Date gresite!";
 	}	
 }
 ?>
@@ -31,7 +31,7 @@ if(isset($_POST['btn-login']))
 <title>Logare</title>
 <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
 <link href="bootstrap/css/bootstrap-theme.min.css" rel="stylesheet" media="screen">
-<link rel="stylesheet" href="style.css" type="text/css"  />
+<link rel="stylesheet" href="/css/style.css" type="text/css"  />
 </head>
 <body>
 
@@ -50,7 +50,7 @@ if(isset($_POST['btn-login']))
 			{
 				?>
                 <div class="alert alert-danger">
-                   <i class="glyphicon glyphicon-warning-sign"></i> &nbsp; <?php echo $error; ?> !
+                   <i class="glyphicon glyphicon-warning-sign"></i> &nbsp; <?php echo $error; ?>
                 </div>
                 <?php
 			}
