@@ -139,7 +139,13 @@ $grupa = "$grupa";
     	
         
         
-        
+ <script>
+  function maxLengthCheck(object) {
+    if (object.value.length > object.max.length)
+      object.value = object.value.slice(0, object.max.length)
+  }
+  
+</script>       
         
        <center> <div id="alert_add" class="alert alert-info"><center><h5>Adaugare in baza de date a unui nou student</h5></center></div> </center>
         
@@ -189,7 +195,7 @@ $grupa = "$grupa";
 			  </select><br /></td>
     </tr>
     <tr>
-    <td><input type="number" name="grupa" class="form-control" placeholder="Nr. Grupei" value="<?php if(isset($error)){echo $grupa;}?>" required /><br /></td>
+    <td><input type="number" name="grupa" class="form-control" placeholder="Nr. Grupei" value="<?php if(isset($error)){echo $grupa;}?>" oninput="maxLengthCheck(this)"  min = "1" max = "999" required /><br /></td>
     </tr>
     <tr>
     <td><button type="submit" class="btn btn-info" name="btn-save"><strong>Salveaza</strong></button></td>
