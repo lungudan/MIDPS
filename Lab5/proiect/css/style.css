@@ -1,0 +1,99 @@
+@charset "utf-8";
+/* CSS Document */
+
+body{
+	background-color:rgba(240,240,240,0.4);
+	background-image: url("/img/backgr.jpg");
+	background-attachment: fixed;
+    background-position-y: 100%;
+    background-position-x: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+	
+	
+}
+
+#alert_add {
+   width:40%; 
+   height:50px;   
+}
+#alert_add h5 {
+position: relative;
+bottom: 6px;	
+	
+}
+
+.form-signin {
+    max-width: 500px;
+    padding: 19px 29px 29px;
+    margin: 0 auto;
+	//margin-top:90px;
+    background-color: #fff;
+	
+    border: 1px solid #e5e5e5;
+    -webkit-border-radius: 5px;
+       -moz-border-radius: 5px;
+            border-radius: 5px;
+    -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+       -moz-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+            box-shadow: 0 1px 2px rgba(0,0,0,.05);
+			
+	font-family:Tahoma, Geneva, sans-serif;
+	color:#990000;
+	font-weight:lighter;
+}
+
+.form-signin .form-signin-heading{
+    color:#007696;
+}
+.form-signin input[type="text"],
+.form-signin input[type="password"],
+.form-signin input[type="email"] {
+    font-size: 16px;
+    height: 45px;
+    padding: 7px 9px;
+}
+
+.signin-form, .body-container
+{
+	//border:solid red 1px;
+	margin-top:110px;
+}
+.navbar-brand{
+	font-family:"Lucida Handwriting";
+}
+#btn-submit{
+	height:45px;
+}
+.h5{
+	font-family:Verdana, Geneva, sans-serif;
+}
+h1{
+	font-family:Verdana, Geneva, sans-serif;
+}
+a{
+text-decoration: none;	
+	
+}
+.block-lang li{
+float: right;
+padding-right:10px;
+margin-top: 10px;
+}
+
+.default-container{padding:75px 15px 45px;}
+.default-container-padding{padding-top:50px;padding-bottom:70px}
+.orange-title{font-size:30px;font-weight:bold;color:#f58220;text-transform:uppercase;text-align:center;margin:0 0 20px}
+.white-title{font-size:30px;font-weight:bold;color:#fff;text-transform:uppercase;text-align:center;margin:0 0 20px}
+.dark-orange-title{font-size:30px;font-weight:bold;color:#f58220;text-align:center;margin:0 0 70px}
+.dark-blue-title{font-size:30px;font-weight:bold;color:#2e3191;text-align:center;margin:0 0 70px}
+.default-container-padding.services{padding-top:30px}
+.default-container-padding.services{padding-top:10px}
+.befefits-block{min-height:52px;padding-left:72px;margin-bottom:50px}
+.image_align_sprite{width:52px;height:52px;position:absolute;left:0;background:url(/img/xsprite.png);background-position:-1050px;background-size:551px}
+.simple-text{top:5px;position:relative;font-size:14px;font-weight:normal;color:#333;line-height:20px}
+.simple-text{font-size:14px;font-weight:normal;color:#333;line-height:20px}
+.simple-title{font-size:25px;font-weight:600;margin-bottom:13px;margin-top:-10px}
+#image-container .simple-title{color:#fffefe}
+.orange-container .simple-title{color:#fffefe}
+.befefits-block .simple-title{color:#2e3191;padding-top:5px}
