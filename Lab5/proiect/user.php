@@ -103,10 +103,10 @@ $default = $_SESSION['language'];
 		<!-- <div class="col-md-12 column"> -->
             <div style="margin-top:70px;">
                 <center>
-                    <img src="userfiles/avatars/<?php echo $row['avatar'];?>" class="img-circle img-responsive" style="height:250px;">
+                    <img src="userfiles/avatars/<?php  if ($row['avatar']) {print $row['avatar'];}else{ print"default.jpg";}?>" class="img-circle img-responsive" style="height:250px;">
                 </center>
-                <h1 class="text-center profile-text profile-name"><?php echo $row['name'];?> <?php echo $row['prename'];?></h1>
-                <h2 class="text-center profile-text profile-profession"><?php echo $row['user_profession'];?></h2>
+                <h1 class="text-center profile-text profile-name"><?php if ($row['name']){print $row['name'];}else{print"Not";}?> <?php if ($row['prename']){print $row['prename'];}else{print"Found";} ?></h1>
+                <h2 class="text-center profile-text profile-profession"><?php if($row['user_profession']) {echo "(".$row['user_profession'].")";}else{ print"";}?></h2>
                 <br>
                 <div class="panel-group white" id="panel-profile">
                     <div class="panel panel-default ">
